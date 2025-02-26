@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 extPath = "/Users/brandonlinchuck/Library/Application Support/Google/Chrome/Default/Extensions/gighmmpiobklfepjocnamgkkbiglidom/6.15.0_1"
+#Change "InsertSystemName" to your system name and get the Chrome extension AdBlock
 options = Options()
 options.add_argument(f"--load-extension={extPath}")
 
