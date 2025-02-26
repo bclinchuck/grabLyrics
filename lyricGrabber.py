@@ -6,12 +6,17 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+#import undetected_chromedriver as uc
+#driver = uc.Chrome()
 
+chop = webdriver.ChromeOptions()
+chop.add_extension('Adblock-Plus_v1.4.1.crx')
+#driver = webdriver.Chrome()
 
-chrome_options = Options()
-chrome_options.add_argument("--headless=new")
+#chrome_options = Options()
+#chrome_options.add_argument("--headless=new")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                          options=chrome_options)
+                          chrome_options=chop)
 
 song = input("Enter the song title: ")
 artist = input("Enter the artist: ")
@@ -31,10 +36,11 @@ for char in song:
         searchSong = searchSong + char
 
 driver.get("https://www.genius.com/" + searchArt + "-" + searchSong + "-lyrics")
-time.sleep(5)
-pause = WebDriverWait(driver,15)
-#lyrics = pause.until(EC.presence_of_element_located((By.XPATH, '//*[contains(@class, "Lyrics-sc-37019ee2-1 jRTEBZ")]')))
-lyrics = pause.until(EC.presence_of_all_elements_located((By.XPATH,"div[data-lyrics-container='true']")))
+#print(driver.page_source)
+##time.sleep(5)
+pause = WebDriverWait(driver,30)
+##lyrics = pause.until(EC.presence_of_element_located((By.XPATH, '//*[contains(@class, "Lyrics-sc-37019ee2-1 jRTEBZ")]')))
+lyrics = pause.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,"div[data-lyrics-container='true']")))
 allLyrics = "\n".join([element.text for element in lyrics])
 print(allLyrics.text)
 #print(driver.page_source)
