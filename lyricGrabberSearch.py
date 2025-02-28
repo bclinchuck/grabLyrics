@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-extPath = "/Users/InsertSystemName/Library/Application Support/Google/Chrome/Default/Extensions/gighmmpiobklfepjocnamgkkbiglidom/6.15.0_1"
+extPath = "/Users/brandonlinchuck/Library/Application Support/Google/Chrome/Default/Extensions/gighmmpiobklfepjocnamgkkbiglidom/6.15.0_1"
 #Change "InsertSystemName" to your system name and get the Chrome extension AdBlock
 #Add the extension here: https://chromewebstore.google.com/detail/adblock-%E2%80%94-block-ads-acros/gighmmpiobklfepjocnamgkkbiglidom?hl=en-US
 
@@ -45,9 +45,17 @@ pause = WebDriverWait(driver,5)
 lyrics = pause.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,"div[data-lyrics-container='true']")))
 songTitle = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR, "h1"))).text
 artistName = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR,"a[href*='/artists/']"))).text
-allLyrics = "\n".join([element.text for element in lyrics])
+#allLyrics = "\n".join([element.text for element in lyrics])
+
+print("\nLyrics to " + songTitle + " by " + artistName + ":")
+lyricArray = []
+for element in lyrics:
+    line = element.text
+    if '' in line:
+        lyricArray.append(line)
+    if '[' in line:
+        lyricArray.append(line + "\n")
 
 #Print and close browser
-print("\nLyrics to " + songTitle + " by " + artistName + ":")
-print("\n" + allLyrics)
+print("\n" + "\n".join(lyricArray)) #allLyrics
 driver.quit()
