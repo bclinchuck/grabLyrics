@@ -26,8 +26,6 @@ parser.add_argument("artist", type=str, nargs="?", default=artist, help="Artist 
 args = parser.parse_args()
 print(f"Searching for {args.song} by {args.artist}")
 
-#options.add_argument("--headless")  
-
 # Open genius.com
 driver.get("https://genius.com/")
 wait = WebDriverWait(driver, 10)
@@ -42,14 +40,14 @@ search_box.submit()
 first_result = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "div.mini_card-info")))
 first_result.click()
 
-# Wait for lyrics to load
-lyrics_container = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div[data-lyrics-container='true']")))
-lyrics = "\n".join([element.text for element in lyrics_container])
-pause = WebDriverWait(driver,5)
-
 # Locate the lyrics and set allLyrics to the text
+pause = WebDriverWait(driver,5)
 lyrics = pause.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,"div[data-lyrics-container='true']")))
+songTitle = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR, "h1"))).text
+artistName = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR,"a[href*='/artists/']"))).text
 allLyrics = "\n".join([element.text for element in lyrics])
+
 #Print and close browser
+print("\nLyrics to " + songTitle + " by " + artistName + ":")
 print("\n" + allLyrics)
 driver.quit()
