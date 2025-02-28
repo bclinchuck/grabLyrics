@@ -9,9 +9,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-extPath = "/Users/brandonlinchuck/Library/Application Support/Google/Chrome/Default/Extensions/gighmmpiobklfepjocnamgkkbiglidom/6.15.0_1"
+extPath = "/Users/InsertSystemName/Library/Application Support/Google/Chrome/Default/Extensions/gighmmpiobklfepjocnamgkkbiglidom/6.15.0_1"
 # For Mac users, use above
-# FOR windows users: extPath = r"C:\Users\InsertSystemName\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\6.15.0_1"
+# If extPath errors for Mac users, change 6.15.0_1 to 6.15.0_0
+# FOR windows users: extPath = r"C:\Users\InsertSystemName\AppData\Local\Google\Chrome\User Data\Default\Extensions\gighmmpiobklfepjocnamgkkbiglidom\6.15.0_0"
 # Change "InsertSystemName" to your system name and get the Chrome extension AdBlock
 # Add the extension here: https://chromewebstore.google.com/detail/adblock-%E2%80%94-block-ads-acros/gighmmpiobklfepjocnamgkkbiglidom?hl=en-US
 
