@@ -7,7 +7,7 @@ I added an adblocker to make the browser load quicker.
 - Install argparse: ' pip install argparse '
 - Install Selenium: ' pip install selenium '
 - Install webdriver-manager: ' pip install webdriver-manager '
-- Install AdBlock on Chrome: https://chromewebstore.google.com/detail/adblock-%E2%80%94-block-ads-acros/gighmmpiobklfepjocnamgkkbiglidom?hl=en-US
+- Install AdBlock on Chrome [here](https://chromewebstore.google.com/detail/adblock-%E2%80%94-block-ads-acros/gighmmpiobklfepjocnamgkkbiglidom?hl=en-US)
 - Line 12: Change ' InsertSystemName ' to your system name. This will allow the program to utilize the AdBlock.
 
 ## How To Use
