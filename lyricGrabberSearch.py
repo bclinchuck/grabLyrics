@@ -7,7 +7,13 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+import os
+from dotenv import find_dotenv, load_dotenv
 
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+SONG = os.getenv("SONG")
+ARTIST = os.getenv("ARTIST")
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
