@@ -11,8 +11,12 @@ This lyric scraper uses Chrome to find and scrape lyrics to a given song on geni
 ## How To Use
 - Open terminal and install `requirements.txt` as stated above.
 - Run script by typing `python lyricGrabberSearch.py` for Windows OS and `python3 lyricGrabberSearch.py` for Mac OS.
-- Program will first ask for a song title. Type the title into terminal.
-- Program will then ask for the artist. Type the artist into terminal.
+- Program will first ask for a song title. Type the title into terminal. Press enter.
+  > Enter the song title:
+  > **Ex)** Enter the song title: Sidelines
+- Program will then ask for the artist. Type the artist into terminal. Press enter.
+  > Enter the artist:
+  > **Ex)** Enter the artist: Wallows
 - A new Chrome browser will open and automate to the genius.com website.
 
 The program will load genius.com, insert the song title and artist into the search bar, proceed with the search, pick the first result, and print the lyrics.
