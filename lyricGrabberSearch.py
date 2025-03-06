@@ -5,12 +5,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import argparse
-from selenium.webdriver.chrome.options import Options
-
-cOptions = Options()
-cOptions.add_argument('--ignore-certificate-errors')
-cOptions.add_argument('--disable-ssl-cert-validation')
-
 
 # Set up argument with user inputs
 song = input("Enter the song title: ")
@@ -22,7 +16,7 @@ args = parser.parse_args()
 print(f"Searching for {args.song} by {args.artist}")
 
 # Open genius.com
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=cOptions)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://genius.com/")
 wait = WebDriverWait(driver, 10)
 
