@@ -1,6 +1,3 @@
-import os
-from dotenv import load_dotenv
-from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -9,13 +6,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import argparse
 
-# Import environment variable with default song and artist (if none are submitted)
-envPath = Path(".env")
-load_dotenv(dotenv_path=envPath)
-
 # Set up argument with user inputs
-song = input("Enter the song title: ") or os.getenv("SONG_TITLE")
-artist = input("Enter the artist: ") or os.getenv("ARTIST")
+song = input("Enter the song title: ")
+artist = input("Enter the artist: ")
 parser = argparse.ArgumentParser()
 parser.add_argument("song", type=str, nargs="?", default=song)  
 parser.add_argument("artist", type=str, nargs="?", default=artist)  
