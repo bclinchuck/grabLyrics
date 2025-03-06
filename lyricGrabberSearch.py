@@ -7,13 +7,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-import os
-from dotenv import find_dotenv, load_dotenv
-
-dotenv_path = find_dotenv()
-load_dotenv(dotenv_path)
-SONG = os.getenv("SONG")
-ARTIST = os.getenv("ARTIST")
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
@@ -46,7 +39,7 @@ lyrics = pause.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,"div[d
 songTitle = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR, "h1"))).text
 artistName = pause.until(EC.presence_of_element_located((By.CSS_SELECTOR,"a[href*='/artists/']"))).text
 
-#Print and close browser
+# Print and close browser
 print("\nLyrics to " + songTitle + " by " + artistName + ":\n")
 allLyrics = "\n".join([element.text for element in lyrics])
 print(allLyrics)
