@@ -6,7 +6,7 @@ This lyric scraper uses Chrome to find and scrape lyrics to a given song on geni
 - Install the latest version of Python
 - Install the used Python libraries in your terminal with: `pip install -r requirements.txt`
 > [!NOTE]
-> - If system cannot find files through downloads, drag the downloads to desktop and type  `cd Desktop ` in terminal, click enter, and try `pip install -r requirements.txt` again.
+> - If system cannot find files through downloads, drag the downloads to desktop and type  `cd Desktop` in terminal, click enter, and try `pip install -r requirements.txt` again.
 
 ## How To Use
 - Open terminal and install `requirements.txt`
