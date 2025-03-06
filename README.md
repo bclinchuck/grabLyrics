@@ -13,7 +13,6 @@ This lyric scraper uses Chrome to find and scrape lyrics to a given song on geni
 - Run script by typing `python lyricGrabberSearch.py` for Windows OS and `python3 lyricGrabberSearch.py` for Mac OS.
 - Program will first ask for a song title. Type the title into terminal. Press enter.
   > Enter the song title:
-  > 
   > **Ex)** Enter the song title: Sidelines
 - Program will then ask for the artist. Type the artist into terminal. Press enter.
   > Enter the artist:
