@@ -1,6 +1,3 @@
-import argparse
-import sys
-import time
 import os
 from dotenv import load_dotenv
 from pathlib import Path
@@ -10,9 +7,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+import argparse
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
+# Import environment variable with default song and artist (if none are submitted)
 envPath = Path(".env")
 load_dotenv(dotenv_path=envPath)
 
@@ -26,6 +23,7 @@ args = parser.parse_args()
 print(f"Searching for {args.song} by {args.artist}")
 
 # Open genius.com
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://genius.com/")
 wait = WebDriverWait(driver, 10)
 
