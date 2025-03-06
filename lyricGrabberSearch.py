@@ -1,6 +1,9 @@
 import argparse
 import sys
 import time
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -10,12 +13,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
+envPath = Path(".env")
+load_dotenv(dotenv_path=envPath)
+
 # Set up argument with user inputs
-song = input("Enter the song title: ")
-artist = input("Enter the artist: ")
-parser = argparse.ArgumentParser(description="Retrieve song lyrics from genius.com")
-parser.add_argument("song", type=str, nargs="?", default=song, help="Song title")  
-parser.add_argument("artist", type=str, nargs="?", default=artist, help="Artist name")  
+song = input("Enter the song title: ") or os.getenv("SONG_TITLE")
+artist = input("Enter the artist: ") or os.getenv("ARTIST")
+parser = argparse.ArgumentParser()
+parser.add_argument("song", type=str, nargs="?", default=song)  
+parser.add_argument("artist", type=str, nargs="?", default=artist)  
 args = parser.parse_args()
 print(f"Searching for {args.song} by {args.artist}")
 
