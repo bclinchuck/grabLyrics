@@ -9,7 +9,7 @@ This lyric scraper uses Chrome to find and scrape lyrics to a given song on geni
 > - If system cannot find files through downloads, drag the downloads to desktop and type  `cd Desktop` in terminal, click enter, and try `pip install -r requirements.txt` again.
 
 ## How To Use
-- Open terminal and install `requirements.txt`
+- Open terminal and install `requirements.txt` as stated above.
 - Run script by typing `python lyricGrabberSearch.py` for Windows OS and `python3 lyricGrabberSearch.py` for Mac OS.
 - Program will first ask for a song title. Type the title into terminal.
 - Program will then ask for the artist. Type the artist into terminal.
