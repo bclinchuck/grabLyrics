@@ -21,4 +21,4 @@ This lyric scraper uses Chrome to find and scrape lyrics to a given song on geni
   > **Ex)** Enter the artist: Wallows
 - A new Chrome browser will open and automate to the genius.com website.
 
-The program will load genius.com, insert the song title and artist into the search bar, proceed with the search, pick the first result, and print the lyrics.
+The program will load genius.com, insert the song title and artist into the search bar, proceed with the search, pick the first result, and print the lyrics back into the terminal.
